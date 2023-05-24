@@ -1,0 +1,81 @@
+﻿<html>
+<head>
+    <title>Bee Launcher | Téléchargement</title>
+    <link rel="icon" href="../asset/bee.png">
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            background-image: url(../asset/background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            user-select: none;
+            color: white;
+        }
+
+        div {
+            margin-top: 250px;
+            border: 5px solid white;
+            margin-left: auto;
+            margin-right: auto;
+            width: 800;
+            padding: 10px;
+            background-color: #eac785db;
+            border-radius: 20px;
+        }
+
+        #discord-button{
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+            -webkit-user-drag: none;
+        }
+
+        #download-title{
+            background-color: #0000ffa1;
+            font-size: 20px;
+            padding: 5;
+            border-radius: 10px;
+        }
+
+        #download-title > b{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://kiriox94.github.io/bee-launcher/discord" target="_blank"><img src="../asset/discord_icon.png" id="discord-button" alt="discord"></a>
+    <div>
+        <span id="download-title">Le téléchargement de <b></b> viens de commencer</span>
+        <h2>Merci d'avoir téléchargé Bee Launcher, n'hésitez pas à venir nous voir sur <a href="https://kiriox94.github.io/bee-launcher/discord" target="_blank">discord</a></h2>
+    </div>
+    <script>
+        var platform = document.location.href.split("?")[1]
+        var fileName
+
+        if(platform == null) document.location.replace("../")
+        if(platform == "windows"){
+            fileName = "bee-launcher_V{0}_setup.zip"
+        }else if(platform == "linux"){
+            fileName = "bee-launcher_V{0}_linux.deb"
+        }else{
+            document.location.replace("../")
+        }
+
+        fetch("../data.json").then(r =>{
+            fileName = fileName.replace("{0}", JSON.parse(r).latest_version)
+        })
+
+        document.querySelector("#download-title > b").textContent = fileName
+
+        let downloadLink = document.createElement("a")
+        downloadLink.href = "./bee-launcher_setup.zip.001"
+        downloadLink.download = fileName
+        downloadLink.click()
+        downloadLink.href = "./bee-launcher_setup.zip.002"
+        downloadLink.click()
+    </script>
+</body>
+</html>

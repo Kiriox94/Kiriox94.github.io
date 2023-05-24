@@ -2,58 +2,15 @@
 <head>
     <title>Bee Launcher</title>
     <link rel="icon" href="asset/bee.png">
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            margin: 0;
-            background-image: url(asset/background.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            user-select: none;
-        }
-
-        div {
-            margin-top: 250px;
-            border: 5px solid white;
-            margin-left: auto;
-            margin-right: auto;
-            width: 700;
-            padding: 10px;
-            background-color: #f5deb391;
-            border-radius: 20px;
-        }
-
-        .download-button {
-            width: 95px;
-            height: 95px;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin-right: 20px;
-            cursor: pointer;
-            border-radius: 15px;
-        }
-
-        .download-button:hover {
-            background-color: burlywood;
-        }
-
-        #discord-button{
-            cursor: pointer;
-            position: absolute;
-            right: 15px;
-            bottom: 10px;
-            -webkit-user-drag: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="asset/discord_icon.png" id="discord-button" alt="discord" onclick="window.open('https://discord.gg/7RhpRMCEXQ', '_blank').focus();">
+    <a href="https://kiriox94.github.io/bee-launcher/discord" target="_blank"><img src="asset/discord_icon.png" id="discord-button" alt="discord"></a>
     <div>
         <h2 style="color: white;background-color: #0000ffa1;">Télécharger Bee Launcher</h2>
-        <button class="download-button" style="background-image: url(asset/windows_icon.png);" onclick="document.location.assign('download/windows.html')"></button>
-        <button class="download-button" style="background-image: url(asset/apple_icon.png);" onclick="document.location.assign('download/mac.html')"></button>
-        <button class="download-button" style="background-image: url(asset/linux_icon.png);" onclick="document.location.assign('download/linux.html')"></button>
+        <a href="download?windows"><button class="download-button" style="background-image: url(asset/windows_icon.png);"></button></a>
+        <a href="download?mac" disabled><button class="download-button" style="background-image: url(asset/apple_icon.png);"></button></a>
+        <a href="download?linux"><button class="download-button" style="background-image: url(asset/linux_icon.png);"></button></a>
     </div>
 </body>
 </html>

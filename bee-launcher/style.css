@@ -1,0 +1,47 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    background-image: url(asset/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    user-select: none;
+}
+
+div {
+    margin-top: 250px;
+    border: 5px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700;
+    padding: 10px;
+    background-color: #f5deb391;
+    border-radius: 20px;
+}
+
+.download-button {
+    width: 95px;
+    height: 95px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: burlywood;
+}
+
+#discord-button{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    -webkit-user-drag: none;
+}
+
+a[disabled] > .download-button {
+    background-color: #6e6e6e;
+    cursor: default;
+}
